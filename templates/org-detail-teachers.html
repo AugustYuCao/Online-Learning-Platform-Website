@@ -1,0 +1,35 @@
+{% extends 'org_base.html' %}
+{% block title %}teachers of the organization{% endblock %}
+{% block right_form %}
+    <div class="right companycenter layout" >
+        <div class="head">
+            <h1>Instructors</h1>
+        </div>
+        <div class="messagelist">
+
+            <div class=" butler_list butler-fav-box">
+                {% for teacher in all_teacher %}
+                    <dl class="des users">
+                    <dt>
+                        <a href="">
+                        <img width="100" height="100" class="scrollLoading" data-url="{{ MEDIA_URL }}{{ teacher.image }}" src="{{ MEDIA_URL }}{{ teacher.image }}"/>
+                        </a>
+                    </dt>
+                    <dd>
+                        <h1>
+                            <a href="">
+                            {{ teacher.name }}<span class="key">Confirmed</span>
+                            </a>
+                        </h1>
+                        <ul class="cont clearfix">
+                            <li class="time">Working Years：<span>{{ teacher.work_years }}years</span></li>
+                            <li class="c7">Number of Courses：<span>{{ teacher.course_nums }}</span></li>
+                        </ul>
+                    </dd>
+                </dl>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
